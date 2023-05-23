@@ -1,4 +1,4 @@
-##**Ecommerce
+# Ecommerce
 
 ```bash
 # You can start the project with below commands
