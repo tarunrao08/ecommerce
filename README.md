@@ -1,13 +1,16 @@
-# Ecommerce With Golang
+##**Ecommerce
 
+```bash
 # You can start the project with below commands
 docker-compose up -d
 go run main.go
+```
 
-# SIGNUP FUNCTION API CALL (POST REQUEST)
+- **SIGNUP FUNCTION API CALL (POST REQUEST)**
 
 http://localhost:8000/users/signup
-json
+
+```json
 {
   "first_name": "Akhil",
   "last_name": "Sharma",
@@ -15,22 +18,24 @@ json
   "password": "akhilsharma",
   "phone": "+4534545435"
 }
+```
 
 Response :"Successfully Signed Up!!"
 
-# LOGIN FUNCTION API CALL (POST REQUEST)
+- **LOGIN FUNCTION API CALL (POST REQUEST)**
 
   http://localhost:8000/users/login
 
-json
+```json
 {
   "email": "akhil@gmail.com",
   "password": "akhilsharma"
 }
+```
 
-**response will be like this
+response will be like this
 
-json
+```json
 {
   "_id": "***********************",
   "first_name": "akhil",
@@ -47,27 +52,30 @@ json
   "address": [],
   "orders": []
 }
+```
 
-# Admin add Product Function (POST REQUEST)
+- **Admin add Product Function (POST REQUEST)**
 
   http://localhost:8000/admin/addproduct
 
-json
+```json
 {
   "product_name": "Alienware x15",
   "price": 2500,
   "rating": 10,
   "image": "alienware.jpg"
 }
+```
 
 Response : "Successfully added our Product Admin!!"
 
-# View all the Products in db GET REQUEST
+- **View all the Products in db GET REQUEST**
 
   http://localhost:8000/users/productview
 
 Response
-json
+
+```json
 [
   {
     "Product_ID": "6153ff8edef2c3c0a02ae39a",
@@ -105,15 +113,16 @@ json
     "image": "acer.jpg"
   }
 ]
+```
 
-# Search Product by regex function (GET REQUEST)
+- **Search Product by regex function (GET REQUEST)**
 
 defines the word search sorting
 http://localhost:8000/users/search?name=al
 
 response:
 
-json
+```json
 [
   {
     "Product_ID": "616152fa9f29be942bd9df91",
@@ -130,55 +139,56 @@ json
     "image": "1.jpg"
   }
 ]
+```
 
-# Adding the Products to the Cart (GET REQUEST)
+- **Adding the Products to the Cart (GET REQUEST)**
 
   http://localhost:8000/addtocart?id=xxxproduct_idxxx&userID=xxxxxxuser_idxxxxxx
 
   Corresponding mongodb query
 
-# Removing Item From the Cart (GET REQUEST)
+- **Removing Item From the Cart (GET REQUEST)**
 
   http://localhost:8000/addtocart?id=xxxxxxx&userID=xxxxxxxxxxxx
 
-# Listing the item in the users cart (GET REQUEST) and total price
+- **Listing the item in the users cart (GET REQUEST) and total price**
 
   http://localhost:8000/listcart?id=xxxxxxuser_idxxxxxxxxxx
 
-# Addding the Address (POST REQUEST)
+- **Addding the Address (POST REQUEST)**
 
   http://localhost:8000/addadress?id=user_id**\*\***\***\*\***
 
   The Address array is limited to two values home and work address more than two address is not acceptable
 
-json
+```json
 {
   "house_name": "white house",
   "street_name": "white street",
   "city_name": "washington",
   "pin_code": "332423432"
 }
+```
 
-
-# Editing the Home Address(PUT REQUEST)
+- **Editing the Home Address(PUT REQUEST)**
 
   http://localhost:8000/edithomeaddress?id=xxxxxxxxxxuser_idxxxxxxxxxxxxxxx
 
-# Editing the Work Address(PUT REQUEST)
+- **Editing the Work Address(PUT REQUEST)**
 
   http://localhost:8000/editworkaddress?id=xxxxxxxxxxuser_idxxxxxxxxxxxxxxx
 
-# Delete Addresses(GET REQUEST)
+- **Delete Addresses(GET REQUEST)**
 
   http://localhost:8000/deleteaddresses?id=xxxxxxxxxuser_idxxxxxxxxxxxxx
 
   delete both addresses
 
-# Cart Checkout Function and placing the order(GET REQUEST)
+- **Cart Checkout Function and placing the order(GET REQUEST)**
 
   After placing the order the items have to be deleted from cart functonality added
 
   http://localhost:8000?id=xxuser_idxxx
 
-# Instantly Buying the Products(GET REQUEST)
+- **Instantly Buying the Products(GET REQUEST)**
   http://localhost:8000?userid=xxuser_idxxx&pid=xxxxproduct_idxxxx
